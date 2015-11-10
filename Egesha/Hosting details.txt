@@ -1,0 +1,23 @@
+000webhost
+
+Email: gatobumalex@gmail.com
+Password: asd!@#6353aMgx
+
+Account-->paknav.net63.net
+
+Username: a3213086
+Password: asd!@#
+
+paknav.net63.net/public_html/mobi/
+
+$mysql_host = "mysql1.000webhost.com";
+$mysql_database = "a3213086_paknav";
+$mysql_user = "a3213086_alex";
+$mysql_password = "asd123";
+
+parkinglots
+
+$mysql_host = "mysql1.000webhost.com";
+$mysql_database = "a3213086_pakweb";
+$mysql_user = "a3213086_alexweb";
+$mysql_password = "asd123";

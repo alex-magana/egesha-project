@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>PAKNAV</title>
+<link href="jquery.mobile.theme-1.0.min.css" rel="stylesheet" type="text/css"/>
+<link href="jquery.mobile.structure-1.0.min.css" rel="stylesheet" type="text/css"/>
+<script src="jquery-1.6.4.min.js" type="text/javascript"></script>
+<script src="jquery.mobile-1.0.min.js" type="text/javascript"></script>
+    
+<script type="text/javascript">
+
+	/* var id;
+	var name;
+	var latitude;
+	var longitude;
+	var ophr;
+	var clhr;
+	var rate;
+	var ownershp; */
+	
+function checkId(entity){
+	notEmpty(entity, "Please enter an Id");
+	isNumeric(entity, "Please enter the correct Id");	
+		
+}	
+
+function checkName(name){
+	notEmpty(name, "Please enter a name");
+	isAlphabet(name, "Please enter more than one word for the name");	
+		
+}
+
+function checkLatitude(latitude){
+	notEmpty(latitude, "Please enter a latitude");
+	isNumeric(latitude, "Please enter a valid latitude");	
+		
+}
+
+function checkLongitude(longitude){
+	notEmpty(longitude, "Please enter a longitude");
+	isNumeric(longitude, "Please enter a valid longitude");	
+		
+}
+
+function checkOphr(ophr){
+	notEmpty(ophr, "Please enter an opening hour");
+	isAlphanumeric(ophr, "Please enter a valid opening hour");	
+		
+}
+
+function checkClhr(clhr){
+	notEmpty(clhr, "Please enter a closing hour");
+	isAlphanumeric(clhr, "Please enter a valid closing hour");	
+		
+}
+
+function checkRate(rate){
+	notEmpty(rate, "Please enter the rate charged");
+	isNumeric(rate, "Please enter a valid rate");	
+		
+}
+
+function checkOwner(owner){
+	notEmpty(ownner, "Please enter PRIVATE or PUBLIC");
+	isAlphabet(owner, "Please enter PRIVATE or PUBLIC");	
+		
+}
+
+function notEmpty(elem, helperMsg){
+	if(elem.value.length == 0){
+		alert(helperMsg);
+		elem.focus(); // set the focus to this input
+		return false;
+	}else{
+	return true;
+		}
+}
+
+function isNumeric(elem, helperMsg){
+	var a = /^[0-9]+$/;
+	var b = /^[0-9]+\.[0-9]+$/;
+	var c = /^-[0-9]+\.[0-9]+$/;
+	if((elem.value.match(a))||(elem.value.match(b))||(elem.value.match(c))){
+		return true;
+	}else{
+		alert(helperMsg);
+		elem.focus();
+		return false;
+	}
+}
+
+function isAlphabet(elem, helperMsg){
+	var d = /^[a-zA-Z]+\ [a-zA-Z]+$/;
+	var e = /^[a-zA-Z]+\ [a-zA-Z]+\ [a-zA-Z]+$/;
+	var f = /^[a-zA-Z]+\ [a-zA-Z]+\ [a-zA-Z]+\ [a-zA-Z]+$/;
+	
+	if((elem.value.match(d))||(elem.value.match(e))||(elem.value.match(f))){
+		return true;
+	}else{
+		alert(helperMsg);
+		elem.focus();
+		return false;
+		
+	}
+}
+
+function isAlphanumeric(elem, helperMsg){
+	var alphaExp = /^[0-9a-zA-Z]+$/;
+	if(elem.value.match(alphaExp)){
+		return true;
+	}else{
+		alert(helperMsg);
+		elem.focus();
+		return false;
+	}
+}
+
+</script>
+
+</head> 
+<body> 
+
+<div data-role="page" id="page">
+	<div data-role="header">
+        <a href="index.html" data-icon="home">Home</a>
+      <h1><strong>PAKNAV</strong></h1>
+        
+	</div>
+	<div data-role="content">	
+		<ul data-role="listview" data-theme="b">
+			<li><a href="view.php">View</a></li>
+            <li><a href="#page3">Add</a></li>
+            <li><a href="#page4">Delete</a></li>
+			<li><a href="#page5">Modify</a></li>
+            <li><a href="report.html">Report</a></li>
+		</ul>		
+	</div>
+	<div data-role="footer">
+		<h4>&copy; 2013 ALEX MAGANA paknav.com | All right reserved</h4>
+	</div>
+</div>
+
+<div data-role="page" id="page3">
+	<div data-role="header">
+		<a data-icon="arrow-l" data-rel="back">Back</a>
+        <h1>Add</h1>
+        <a href="index.html" data-icon="home">Home</a>
+	</div>
+	<div data-role="content">	
+
+        <form action="add.php" method="get"><!--onsubmit="return formValidator()"-->
+Name:<input type="text" id="name" name="name" onBlur="checkName(document.getElementById('name'))"/><br/>
+Latitude:<input type="text" id="lat" name="lat" onBlur="checkLatitude(document.getElementById('lat'))"/><br/>
+Longitude:<input type="text" id="lng" name="lng" onBlur="checkLongitude(document.getElementById('lng'))"/><br/>
+Opening hour:<input type="text" id="ophour" name="ophour" onBlur="checkOphr(document.getElementById('ophour'))"/><br/>
+Closing hour:<input type="text" id="clhour" name="clhour" onBlur="checkClhr(document.getElementById('clhour'))"/><br/>
+Rate:<input type="text" id="charge" name="charge" onBlur="checkRate(document.getElementById('charge'))"/><br/>
+Ownership:<input type="text" id="owner" name="owner" onBlur="checkOwner(document.getElementById('owner'))"/><br/>
+<input type="submit" value="Submit" name="Submit"/>
+<input type="reset" value="Cancel"/>
+	  </form>		
+    </div><!--END OF PAGE 3 Content-->    
+	<div data-role="footer">
+		<h4>&copy; 2013 ALEX MAGANA paknav.com | All right reserved</h4>
+	</div>
+</div>
+
+<div data-role="page" id="page4">
+	<div data-role="header">
+		<a data-icon="arrow-l" data-rel="back">Back</a>
+        <h1>Delete</h1>
+        <a href="index.html" data-icon="home">Home</a>
+	</div>
+	<div data-role="content">	
+		
+        <form action="delete.php" method="get">
+Id:<input type="text" id="pId" name="pId" onBlur="checkId(document.getElementById('pId'))"/><br/>
+Name:<input type="text" id="Pname" name="Pname" onBlur="checkName(document.getElementById('Pname'))"/><br/>
+<input type="submit" value="Submit"/>
+<input type="reset" value="Cancel"/>
+		</form>	
+        		
+	</div><!--END OF PAGE 4 Content-->
+	<div data-role="footer">
+		<h4>&copy; 2013 ALEX MAGANA paknav.com | All right reserved</h4>
+	</div>
+</div>
+
+<div data-role="page" id="page5">
+	<div data-role="header">
+		<a data-icon="arrow-l" data-rel="back">Back</a>
+        <h1>Modify</h1>
+        <a href="index.html" data-icon="home">Home</a>
+	</div>
+	<div data-role="content">	
+		
+        <form action="modify.php" method="get">
+Id:<input type="text" id="parkid" name="parkid" onBlur="checkId(document.getElementById('parkid'))"/><br/>
+Name:<input type="text" id="Mname" name="name" onBlur="checkName(document.getElementById('Mname'))"/><br/>
+Latitude:<input type="text" id="Mlat" name="lat" onBlur="checkLatitude(document.getElementById('Mlat'))"/><br/>
+Longitude:<input type="text" id="Mlng" name="lng" onBlur="checkLongitude(document.getElementById('Mlng'))"/><br/>
+Opening hour:<input type="text" id="Mophour" name="ophour" onBlur="checkOphr(document.getElementById('Mophour'))"/><br/>
+Closing hour:<input type="text" id="Mclhour" name="clhour" onBlur="checkClhr(document.getElementById('Mclhour'))"/><br/>
+Rate:<input type="text" id="Mcharge" name="charge" onBlur="checkRate(document.getElementById('Mcharge'))"/><br/>
+Ownership:<input type="text" id="Mowner" name="owner" onBlur="checkOwner(document.getElementById('Mowner'))"/><br/>
+<input type="submit" value="Submit"/>
+<input type="reset" value="Cancel"/>
+		</form>		
+
+	</div><!--END OF PAGE 5 Content-->
+	<div data-role="footer">
+		<h4>&copy; 2013 ALEX MAGANA paknav.com | All right reserved</h4>
+	</div>
+    
+</div>
+
+</body>
+</html>

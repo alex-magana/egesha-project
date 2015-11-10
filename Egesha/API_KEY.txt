@@ -1,0 +1,18 @@
+Key for Android apps (with certificates)
+API key:	
+AIzaSyC1k8r1DQEX4-y9_-MEUlobSnxUzdv2eSI
+Android apps:	
+69:10:B3:53:77:6E:88:F8:DD:58:16:01:68:07:90:87:29:1A:18:79;com.project.egesha
+95:1C:4E:1A:6B:63:DC:EF:66:7F:8C:56:4F:2B:5C:7C:44:AF:19:91;com.project.egesha
+Activated on:	Nov 22, 2013 4:57 AM
+Activated by:	 gatobumalex@gmail.com – you
+Generate new key...
+Edit allowed Android apps...
+Delete key...
+Key for browser apps (with referers)
+API key:	
+AIzaSyBkd8lvXcc7ce600Cdlino_7zQqkRzeiOQ
+Referers:	
+Any referer allowed
+Activated on:	Nov 22, 2013 4:50 AM
+Activated by:	 gatobumalex@gmail.com – you
